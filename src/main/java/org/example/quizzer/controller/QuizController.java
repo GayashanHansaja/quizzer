@@ -1,13 +1,15 @@
 package org.example.quizzer.controller;
 
+import org.example.quizzer.model.Question;
+import org.example.quizzer.model.QuestionWrapper;
+import org.example.quizzer.model.Quiz;
 import org.example.quizzer.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("quiz")
@@ -19,5 +21,10 @@ public class QuizController {
     @PostMapping("create")
     public ResponseEntity<String> createQuiz(@RequestParam String category, @RequestParam int numQ, @RequestParam String quizTitle) {
        return quizService.createQuiz(category, numQ, quizTitle);
+    }
+
+    @GetMapping("get/{id}")
+    public ResponseEntity<List<QuestionWrapper>> getQuizQuestions(@PathVariable int id) {
+        return quizService.getQuizQuestions(id);
     }
 }
