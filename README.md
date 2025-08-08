@@ -62,7 +62,7 @@ Quizzer is a RESTful API for creating and taking quizzes, built with Spring Boot
 
 ## API Endpoints
 
->[!Postman Document}
+>[!Postman Document]
 > https://documenter.getpostman.com/view/42363796/2sB3BDKrEH
 
 ### Quiz Endpoints
