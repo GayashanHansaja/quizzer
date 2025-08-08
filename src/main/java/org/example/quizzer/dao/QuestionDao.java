@@ -11,7 +11,7 @@ import java.util.List;
 public interface QuestionDao extends JpaRepository<Question, Integer> {
 
     //in here there is no query. Use JPA to understand the column name
-    //ther wise we have to write quesry if there lot of customization
+    //otherwise we have to write query if there are lot-of customization
     List<Question> findByCategory(String category);
 
     //this will be a complex find so we write a query
